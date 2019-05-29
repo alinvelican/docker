@@ -29,3 +29,8 @@ def deleteAllImages():
 
 client.images.get('myserver').tag('alinvelican/myserver')
 client.images.push('alinvelican/myserver')
+
+
+import docker
+client = docker.from_env()
+client.images.build(path = "./",tag = "myserver")
